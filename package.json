@@ -1,0 +1,38 @@
+{
+  "name": "express-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/praekiko/express-api.git"
+  },
+  "keywords": [],
+  "author": "Lalitwadee Damyos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/praekiko/express-api/issues"
+  },
+  "homepage": "https://gitlab.com/praekiko/express-api#README",
+  "dependencies": {
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-import-graphql": "^2.6.2",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.17.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.7.0"
+  }
+}
