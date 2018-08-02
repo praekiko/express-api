@@ -1,23 +1,29 @@
-import express from 'express';
-import cors from 'cors';
-import morgan from 'morgan';
+import express from 'express'
+import cors from 'cors'
+import morgan from 'morgan'
+import bodyParser from 'body-parser'
 
-import healthCheck from './healthCheck';
-import apiRouters from './apiRouters';
+import config from '../common/config'
+import ConnectDatabase from '../common/utils/ConnectDatabase'
 
-async function initServer(app) {
-	try {
-		app.use(morgan('dev'));
-		app.use(cors());
-	} catch (err) {
-		throw new Error(err);
-	}
+import setupRoutes from './setupRoutes'
+
+function setup() {
+	const app = express()
+	const { port, host } = config
+
+	app.use(morgan('tiny'))
+	app.use(cors())
+	app.use(bodyParser.urlencoded({ extended: true }))
+	app.use(bodyParser.json())
+
+	setupRoutes(app)
+
+	ConnectDatabase().then(() =>
+		app.listen(config.port, () => {
+			console.log(`🏠 API is running on http://${host}:${port}`)
+		}),
+	)
 }
 
-const app = express();
-
-initServer(app);
-healthCheck(app);
-apiRouters(app);
-
-export default app;
+export default setup

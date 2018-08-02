@@ -1,6 +1,3 @@
-import server from './server';
-import config from './common/config';
+import setUpServer from './server'
 
-server.listen(config.port, () => {
-	console.log('🏠 API is running on port', config.port);
-});
+setUpServer()
