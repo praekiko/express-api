@@ -7,17 +7,18 @@
   - 🎉 Babel
   - 🎉 ESLint (AirBnB with some personal rules added)
   - 🎉 Prettier
+  - Connect to MongoDB using mongoose
 
 - Up comming
   - ✔️ GraphQL
   - ✔️ Apollo Server
-  - ✔️ Mongoose
 
 
 ## Usage
 
-Just type
+```bash
+npm run start
+```
 
-#### `npm run start`
 
 
